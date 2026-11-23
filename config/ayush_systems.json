@@ -1,0 +1,106 @@
+{
+  "_metadata": {
+    "title": "Ministry of Ayush System Specific Intake Configurations",
+    "version": "1.0.0",
+    "description": "Configurable fields tailored to specific Ayush disciplines (Ayurveda, Yoga & Naturopathy, Unani, Siddha, Homeopathy)."
+  },
+  "systems": {
+    "ayurveda": {
+      "name": "Ayurveda",
+      "specialty_fields": [
+        {
+          "field_id": "agni_assessment",
+          "label": {
+            "en": "Digestive Fire (Agni)",
+            "hi": "पाचन अग्नि (Agni)",
+            "mr": "पाचन अग्नी"
+          },
+          "options": ["Vishamagni (Irregular)", "Tikshnagni (Intense/Fast)", "Mandagni (Sluggish/Slow)", "Samagni (Balanced)"]
+        },
+        {
+          "field_id": "koshtha_assessment",
+          "label": {
+            "en": "Bowel Habit (Koshtha)",
+            "hi": "कोष्ठ (Koshtha)",
+            "mr": "कोष्ठ स्वभाव"
+          },
+          "options": ["Krura (Hard/Constipated)", "Madhyama (Moderate)", "Mridu (Soft/Frequent)"]
+        },
+        {
+          "field_id": "prakriti_primary",
+          "label": {
+            "en": "Predominant Dosha Tendency",
+            "hi": "प्रमुख दोष प्रवृत्ति",
+            "mr": "प्रमुख दोष प्रवृत्ती"
+          },
+          "options": ["Vata", "Pitta", "Kapha", "Vata-Pitta", "Pitta-Kapha", "Vata-Kapha", "Tridoshic", "Not Assessed"]
+        }
+      ]
+    },
+    "homeopathy": {
+      "name": "Homeopathy",
+      "specialty_fields": [
+        {
+          "field_id": "thermal_state",
+          "label": {
+            "en": "Thermal State (Chilly / Hot)",
+            "hi": "थर्मल अवस्था (सर्दी/गर्मी सहनशीलता)",
+            "mr": "थर्मल अवस्था (थंडी/उष्णता सहनशीलता)"
+          },
+          "options": ["Chilly Patient (Sensitive to cold)", "Hot Patient (Sensitive to heat)", "Ambithermal"]
+        },
+        {
+          "field_id": "thirst_pattern",
+          "label": {
+            "en": "Thirst Characteristic",
+            "hi": "प्यास का स्वरूप",
+            "mr": "तहानेचे स्वरूप"
+          },
+          "options": ["Thirstless", "Thirsty for small quantities often", "Thirsty for large quantities", "Craves cold drinks"]
+        }
+      ]
+    },
+    "unani": {
+      "name": "Unani Tibb",
+      "specialty_fields": [
+        {
+          "field_id": "mizaj_temperament",
+          "label": {
+            "en": "Temperament (Mizaj)",
+            "hi": "मिज़ाज (Mizaj)",
+            "mr": "मिझाज (प्रकृती)"
+          },
+          "options": ["Damwi (Sanguine)", "Safrawi (Choleric)", "Balghami (Phlegmatic)", "Saudawi (Melancholic)", "Mu'tadil (Equable)"]
+        }
+      ]
+    },
+    "siddha": {
+      "name": "Siddha Medicine",
+      "specialty_fields": [
+        {
+          "field_id": "mukkuttram_humor",
+          "label": {
+            "en": "Three Humors (Mukkuttram)",
+            "hi": "मुक्कुट्ट्रम (Mukkuttram)",
+            "mr": "मुक्कुट्ट्रम (वात-पित्त-कफ)"
+          },
+          "options": ["Vali (Vatham)", "Azhal (Pitham)", "Iyyam (Kabam)"]
+        }
+      ]
+    },
+    "yoga_naturopathy": {
+      "name": "Yoga & Naturopathy",
+      "specialty_fields": [
+        {
+          "field_id": "daily_activity_level",
+          "label": {
+            "en": "Daily Physical Routine / Vyayama",
+            "hi": "दैनिक व्यायाम व शारीरिक गतिविधि",
+            "mr": "दैनिक व्यायाम व शारीरिक हालचाली"
+          },
+          "options": ["Sedentary", "Occasional walking", "Regular Yoga / Asana", "Intense physical labor"]
+        }
+      ]
+    }
+  }
+}

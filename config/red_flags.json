@@ -1,0 +1,156 @@
+{
+  "_metadata": {
+    "title": "AyushIntake Critical Red-Flag Triage Rules",
+    "version": "1.0.0",
+    "disclaimer": "CLINICAL REVIEW REQUIRED: These triggers represent immediate escalation signals. Any match immediately halts voice intake and prompts urgent on-site staff response.",
+    "crisis_helpline": "14416",
+    "crisis_service_name": "Tele-MANAS (Mental Health) / National Emergency 112",
+    "ambulance_service": "108"
+  },
+  "triage_response": {
+    "status": "EMERGENCY_HALT",
+    "patient_message": {
+      "en": "Please sit down and rest comfortably. Our clinic staff and medical team are being alerted immediately to attend to you right now.",
+      "hi": "कृपया आराम से बैठ जाएं। हमारे क्लिनिक के कर्मचारी और चिकित्सा टीम को तुरंत आपकी सहायता के लिए भेजा जा रहा है।",
+      "mr": "कृपया शांत बसा आणि विश्रांती घ्या. आमचे क्लिनिक कर्मचारी आणि वैद्यकीय पथक त्वरित तुमच्याकडे येत आहेत."
+    },
+    "staff_alert_priority": "CRITICAL"
+  },
+  "categories": [
+    {
+      "id": "cardiac_chest_pain",
+      "name": "Chest Pain / Cardiac Distress",
+      "keywords": {
+        "en": [
+          "chest pain", "pain in chest", "heart pain", "crushing chest", "radiating to arm", 
+          "tightness in chest", "pressure in chest", "heart attack", "sweating chest pain", "chhati dard"
+        ],
+        "hi": [
+          "सीने में दर्द", "छाती में दर्द", "छाती में दबाव", "दिल में दर्द", "सीने में जलन और पसीना", 
+          "छाती में भारीपन", "हाथ में दर्द फैल रहा", "heart attack", "sine me dard"
+        ],
+        "mr": [
+          "छातीत दुखणे", "छातीत तीव्र वेदना", "छातीत धडधडणे", "छातीत दाब", "हात दुखणे", "छातीमध्ये घाम येणे", "chhatit dukhne"
+        ]
+      }
+    },
+    {
+      "id": "respiratory_distress",
+      "name": "Severe Breathlessness",
+      "keywords": {
+        "en": [
+          "cannot breathe", "hard to breathe", "short of breath", "gasping for air", 
+          "suffocating", "choking", "breathlessness", "asthma attack"
+        ],
+        "hi": [
+          "सांस नहीं आ रही", "सांस फूल रही है", "दम घुट रहा है", "सांस लेने में भारी तकलीफ", 
+          "हवा नहीं मिल रही", "सांस रुक रही है", "sans phoolna"
+        ],
+        "mr": [
+          "श्वास घेता येत नाही", "दम लागतोय", "श्वास कोंडतोय", "श्वास थांबला", "श्वास घेण्यास त्रास", "dam lagne"
+        ]
+      }
+    },
+    {
+      "id": "severe_hemorrhage",
+      "name": "Severe Bleeding / Hemorrhage",
+      "keywords": {
+        "en": [
+          "heavy bleeding", "bleeding profusely", "coughing blood", "vomiting blood", 
+          "blood in vomit", "blood won't stop", "uncontrolled bleeding"
+        ],
+        "hi": [
+          "खून बह रहा है", "खून की उल्टी", "खांसी में खून", "बहुत खून निकल रहा है", 
+          "रक्तस्राव रुक नहीं रहा", "khoon aana", "khoon ki ulti"
+        ],
+        "mr": [
+          "जास्त रक्तस्त्राव", "रक्ताची उलटी", "खोकल्यातून रक्त", "रक्त थांबत नाही", "रक्त वाहत आहे"
+        ]
+      }
+    },
+    {
+      "id": "altered_consciousness",
+      "name": "Fainting / Unconsciousness / Collapse",
+      "keywords": {
+        "en": [
+          "fainted", "passed out", "blacked out", "unconscious", "falling unconscious", 
+          "losing consciousness", "dizzy and collapsed"
+        ],
+        "hi": [
+          "बेहोश हो गया", "चक्कर खाकर गिर गया", "होश खो बैठा", "आंखों के आगे अंधेरा", 
+          "बेहोशी छा रही है", "behosh"
+        ],
+        "mr": [
+          "बेशुद्ध पडले", "भोवळ आली", "चक्कर येऊन पडले", "शुद्ध हरपली", "डोळ्यांसमोर अंधारी"
+        ]
+      }
+    },
+    {
+      "id": "stroke_neurological",
+      "name": "Stroke / Neurological Deficit (FAST)",
+      "keywords": {
+        "en": [
+          "face drooping", "arm weakness", "slurred speech", "cannot speak suddenly", 
+          "one side paralyzed", "sudden numbness", "stroke"
+        ],
+        "hi": [
+          "मुंह टेढ़ा हो गया", "एक तरफ कमजोरी", "बोली लड़खड़ा रही है", "लकवा मार गया", 
+          "फालिज", "हाथ पैर सुन्न हो गए", "bol nahi pa raha"
+        ],
+        "mr": [
+          "तोंड वाकडे झाले", "एका बाजूला पक्षाघात", "बोलणे अडखळणे", "हात पाय लुळे पडले", "अर्धांगवायू"
+        ]
+      }
+    },
+    {
+      "id": "pregnancy_danger",
+      "name": "Obstetric / Pregnancy Danger Signs",
+      "keywords": {
+        "en": [
+          "pregnant and bleeding", "severe labor pain", "water broke early", "pregnant severe headache", 
+          "baby not moving", "blurred vision pregnant"
+        ],
+        "hi": [
+          "गर्भवती और खून", "गर्भावस्था में तेज दर्द", "बच्चा हिल नहीं रहा", "गर्भवती तेज सिरदर्द", 
+          "पानी छूट गया", "garbh me dard"
+        ],
+        "mr": [
+          "गरोदरपणात रक्तस्त्राव", "पोटात तीव्र कळा", "बाळाची हालचाल नाही", "गरोदरपणात तीव्र डोकेदुखी"
+        ]
+      }
+    },
+    {
+      "id": "acute_severe_pain",
+      "name": "Severe / Sudden Thunderclap Pain",
+      "keywords": {
+        "en": [
+          "worst headache of my life", "thunderclap headache", "unbearable abdominal pain", 
+          "severe stomach agony", "extreme acute pain"
+        ],
+        "hi": [
+          "जिंदगी का सबसे तेज सिरदर्द", "असहनीय पेट दर्द", "पेट में भयंकर मरोड़", "दर्द बर्दाश्त से बाहर"
+        ],
+        "mr": [
+          "असह्य डोकेदुखी", "तीव्र पोटदुखी", "वेदना सहन होत नाही"
+        ]
+      }
+    },
+    {
+      "id": "self_harm_crisis",
+      "name": "Self-harm / Crisis Statements",
+      "keywords": {
+        "en": [
+          "want to die", "kill myself", "end my life", "commit suicide", "take all the pills", 
+          "no reason to live", "self harm"
+        ],
+        "hi": [
+          "मरना चाहता हूँ", "जान देना चाहता हूँ", "आत्महत्या", "जीने का मन नहीं है", 
+          "खुद को नुकसान", "zindagi khatam karna"
+        ],
+        "mr": [
+          "मरावेसे वाटते", "आत्महत्या करायची आहे", "जीवन संपवायचे आहे", "स्वतःला संपवणे"
+        ]
+      }
+    }
+  ]
+}

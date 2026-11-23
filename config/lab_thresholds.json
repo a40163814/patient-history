@@ -1,0 +1,63 @@
+{
+  "_metadata": {
+    "title": "AyushIntake Clinical Lab Reference Ranges & Mismatch Rules",
+    "version": "1.0.0",
+    "disclaimer": "CLINICAL REVIEW REQUIRED: These thresholds are reference ranges for flagging discrepancies between patient self-reports and uploaded documentation. The system NEVER makes a diagnosis from these values; it only prompts the doctor to check conflicting data.",
+    "mismatch_message_template": "Check: patient answer differs from report ({field}: reported '{patient_value}', report indicates '{report_value}')"
+  },
+  "biomarkers": {
+    "fasting_blood_glucose": {
+      "standard_name": "Fasting Blood Sugar (FBS)",
+      "units": "mg/dL",
+      "normal_max": 100,
+      "prediabetes_max": 125,
+      "diabetes_threshold": 126,
+      "related_condition_keyword": "diabetes",
+      "mismatch_rule": "IF patient denies diabetes AND extracted_value >= 126 THEN flag_mismatch"
+    },
+    "post_prandial_blood_glucose": {
+      "standard_name": "Post-Prandial Blood Sugar (PPBS)",
+      "units": "mg/dL",
+      "normal_max": 140,
+      "diabetes_threshold": 200,
+      "related_condition_keyword": "diabetes",
+      "mismatch_rule": "IF patient denies diabetes AND extracted_value >= 200 THEN flag_mismatch"
+    },
+    "hba1c": {
+      "standard_name": "Glycated Hemoglobin (HbA1c)",
+      "units": "%",
+      "normal_max": 5.6,
+      "prediabetes_max": 6.4,
+      "diabetes_threshold": 6.5,
+      "related_condition_keyword": "diabetes",
+      "mismatch_rule": "IF patient denies diabetes AND extracted_value >= 6.5 THEN flag_mismatch"
+    },
+    "systolic_bp": {
+      "standard_name": "Systolic Blood Pressure",
+      "units": "mmHg",
+      "normal_max": 120,
+      "hypertension_stage1": 130,
+      "hypertension_stage2": 140,
+      "related_condition_keyword": "blood pressure",
+      "mismatch_rule": "IF patient denies hypertension AND extracted_value >= 140 THEN flag_mismatch"
+    },
+    "serum_creatinine": {
+      "standard_name": "Serum Creatinine",
+      "units": "mg/dL",
+      "normal_male_max": 1.3,
+      "normal_female_max": 1.1,
+      "elevation_threshold": 1.4,
+      "related_condition_keyword": "kidney",
+      "mismatch_rule": "IF patient denies kidney issues AND extracted_value >= 1.4 THEN flag_mismatch"
+    },
+    "hemoglobin": {
+      "standard_name": "Hemoglobin (Hb)",
+      "units": "g/dL",
+      "anemia_threshold_female": 12.0,
+      "anemia_threshold_male": 13.0,
+      "severe_anemia_threshold": 8.0,
+      "related_condition_keyword": "anemia",
+      "mismatch_rule": "IF patient denies anemia AND extracted_value < 10.0 THEN flag_mismatch"
+    }
+  }
+}

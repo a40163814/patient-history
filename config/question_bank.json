@@ -1,0 +1,253 @@
+{
+  "_metadata": {
+    "title": "AyushIntake Standard Pre-OPD Question Bank",
+    "version": "1.0.0",
+    "disclaimer": "CRITICAL NOTICE: This question bank is a clinical draft prototype designed for an intake assistant. A practicing Ayush doctor (BAMS / BHMS / BUMS / BSMS / BNYS) must thoroughly review, adapt, and formally validate every question and follow-up logic before deployment in a real clinical setting.",
+    "supported_languages": [
+      "en",
+      "hi",
+      "mr"
+    ],
+    "max_symptom_questions": 13
+  },
+  "sections": [
+    {
+      "id": "symptoms",
+      "title": {
+        "en": "Current Symptoms & Concerns",
+        "hi": "वर्तमान लक्षण और तकलीफ",
+        "mr": "सध्याची लक्षणे आणि त्रास"
+      },
+      "mandatory": true,
+      "max_questions": 13,
+      "questions": [
+        {
+          "id": "sym_primary",
+          "field": "chief_complaint",
+          "prompt": {
+            "en": "What is the main health problem that brings you to the clinic today?",
+            "hi": "आज क्लिनिक आने का आपका मुख्य कारण क्या है? आपको क्या तकलीफ हो रही है?",
+            "mr": "आज दवाखान्यात येण्याचे मुख्य कारण काय? तुम्हाला काय त्रास होत आहे?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "sym_duration",
+          "field": "symptom_duration",
+          "prompt": {
+            "en": "Since how many days or weeks have you been having this problem?",
+            "hi": "यह तकलीफ आपको कितने दिनों या हफ्तों से हो रही है?",
+            "mr": "हा त्रास तुम्हाला किती दिवसांपासून किंवा आठवड्यांपासून होत आहे?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "sym_severity",
+          "field": "symptom_severity",
+          "prompt": {
+            "en": "Is this mild, moderate, or severe? Does it disturb your sleep or daily work?",
+            "hi": "यह तकलीफ हल्की है, मध्यम है, या बहुत ज्यादा है? क्या इससे आपकी नींद या रोज़मर्रा के काम में बाधा आती है?",
+            "mr": "हा त्रास सौम्य आहे, मध्यम आहे की तीव्र आहे? यामुळे तुमच्या झोपेवर किंवा रोजच्या कामावर परिणाम होतो का?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "sym_aggravating_relieving",
+          "field": "modulating_factors",
+          "prompt": {
+            "en": "Does anything make it feel better or worse, such as resting, eating certain foods, or movement?",
+            "hi": "क्या किसी चीज़ से आराम मिलता है या तकलीफ बढ़ती है, जैसे आराम करने से, कुछ खाने से, या चलने-फिरने से?",
+            "mr": "काही विशिष्ट केल्याने आराम पडतो की त्रास वाढतो, उदा. विश्रांती, विशिष्ट अन्न किंवा हालचाल?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "sym_associated",
+          "field": "associated_symptoms",
+          "prompt": {
+            "en": "Are you experiencing any other symptoms with this, like fever, cough, nausea, headache, dizziness, or weakness?",
+            "hi": "क्या आपको इसके साथ कोई अन्य तकलीफ भी हो रही है, जैसे बुखार, खांसी, उल्टी, सिरदर्द, चक्कर या कमजोरी?",
+            "mr": "या त्रासासोबत तुम्हाला इतर काही लक्षणे जाणवत आहेत का, जसे ताप, खोकला, मळमळ, डोकेदुखी किंवा चक्कर?"
+          },
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "pre_existing_conditions",
+      "title": {
+        "en": "Pre-existing Health Conditions",
+        "hi": "पूर्व-मौजूदा स्वास्थ्य स्थितियां",
+        "mr": "मागील आजार किंवा आरोग्याच्या समस्या"
+      },
+      "mandatory": true,
+      "questions": [
+        {
+          "id": "pec_general",
+          "field": "known_chronic_conditions",
+          "prompt": {
+            "en": "Do you have any ongoing medical conditions like diabetes, blood pressure, asthma, thyroid issues, or acidity?",
+            "hi": "क्या आपको पहले से कोई बीमारी है जैसे कि शुगर (डायबिटीज), बीपी (रक्तचाप), दमा, थायराइड या गैस/एसिडिटी?",
+            "mr": "तुम्हाला मधुमेह (शुगर), रक्तदाब (बीपी), दमा, थायरॉईड किंवा पित्त/अ‍ॅसिडिटी यांसारखा कोणताही जुना आजार आहे का?"
+          },
+          "type": "multi_select_or_text",
+          "follow_ups": [
+            {
+              "condition_keyword": "diabetes",
+              "follow_up_prompt": {
+                "en": "How long have you had diabetes, and do you monitor your blood sugar regularly?",
+                "hi": "आपको शुगर कितने समय से है, और क्या आप नियमित रूप से शुगर की जांच करते हैं?",
+                "mr": "तुम्हाला मधुमेह किती दिवसांपासून आहे आणि तुम्ही नियमित तपासणी करता का?"
+              },
+              "field": "diabetes_history"
+            },
+            {
+              "condition_keyword": "blood pressure",
+              "follow_up_prompt": {
+                "en": "Are you taking regular daily medication for your blood pressure?",
+                "hi": "क्या आप बीपी के लिए रोजाना दवा लेते हैं?",
+                "mr": "तुम्ही रक्तदाबासाठी रोज नियमित औषध घेता का?"
+              },
+              "field": "bp_medication_status"
+            },
+            {
+              "condition_keyword": "asthma",
+              "follow_up_prompt": {
+                "en": "Do you use an inhaler or nebulizer regularly, and when was your last attack?",
+                "hi": "क्या आप रोजाना इनहेलर या भाप लेते हैं, और पिछली बार सांस फूलने का दौरा कब पड़ा था?",
+                "mr": "तुम्ही नियमितपणे इनहेलर वापरता का, आणि शेवटी कधी दमा वाढला होता?"
+              },
+              "field": "asthma_inhaler_status"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "current_medicines",
+      "title": {
+        "en": "Current Medicines & Remedies",
+        "hi": "वर्तमान दवाएं और घरेलू उपचार",
+        "mr": "सध्या सुरू असलेली औषधे व उपचार"
+      },
+      "mandatory": true,
+      "questions": [
+        {
+          "id": "med_allopathic_ayush",
+          "field": "active_medications",
+          "prompt": {
+            "en": "What medicines are you taking right now? Please include English medicines, Ayurvedic kadhas, Churnas, Homeopathic pills, vitamins, or home remedies.",
+            "hi": "आप इस समय कौन-कौन सी दवाएं ले रहे हैं? कृपया अंग्रेजी दवाएं, आयुर्वेदिक काढ़ा, चूर्ण, होम्योपैथी गोलियां, विटामिन या घरेलू नुस्खे भी बताएं।",
+            "mr": "तुम्ही सध्या कोणती औषधे घेत आहात? कृपया अ‍ॅलोपॅथिक गोळ्या, आयुर्वेदिक काढा, चूर्ण, होमिओपॅथीच्या गोळ्या, जीवनसत्त्वे किंवा घरगुती उपाय असल्यास सांगा."
+          },
+          "type": "text",
+          "follow_ups": [
+            {
+              "condition_keyword": "any_medicine",
+              "follow_up_prompt": {
+                "en": "Did a doctor prescribe these, or are you taking them on your own?",
+                "hi": "क्या ये डॉक्टर की सलाह पर ले रहे हैं या खुद से शुरू की हैं?",
+                "mr": "ही डॉक्टरांच्या सल्ल्याने घेत आहात की स्वतःहून सुरू केली आहेत?"
+              },
+              "field": "medicine_source_type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "allergies",
+      "title": {
+        "en": "Allergies",
+        "hi": "एलर्जी",
+        "mr": "अ‍ॅलर्जी"
+      },
+      "mandatory": true,
+      "questions": [
+        {
+          "id": "alg_drugs_food",
+          "field": "allergies_list",
+          "prompt": {
+            "en": "Are you allergic to any medicines, herbs, oils, or foods?",
+            "hi": "क्या आपको किसी दवा, जड़ी-बूटी, तेल या किसी खाने की चीज़ से कोई एलर्जी है?",
+            "mr": "तुम्हाला कोणत्याही औषधाची, वनस्पतींची, तेलाची किंवा विशिष्ट अन्नाची काही अ‍ॅलर्जी आहे का?"
+          },
+          "type": "text",
+          "follow_ups": [
+            {
+              "condition_keyword": "yes",
+              "follow_up_prompt": {
+                "en": "What reaction do you get, like rash, swelling, or itching?",
+                "hi": "एलर्जी होने पर क्या लक्षण होते हैं, जैसे कि दाने, सूजन या खुजली?",
+                "mr": "अ‍ॅलर्जी झाल्यावर काय त्रास होतो, जसे पुरळ, सूज किंवा खाज?"
+              },
+              "field": "allergy_reaction_type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "family_history",
+      "title": {
+        "en": "Family History",
+        "hi": "पारिवारिक इतिहास",
+        "mr": "कौटुंबिक इतिहास"
+      },
+      "mandatory": true,
+      "questions": [
+        {
+          "id": "fam_chronic",
+          "field": "family_health_history",
+          "prompt": {
+            "en": "Does anyone in your direct family (parents or siblings) have conditions like diabetes, heart disease, or kidney problems?",
+            "hi": "क्या आपके परिवार (माता-पिता या भाई-बहन) में किसी को शुगर, दिल की बीमारी या किडनी की बीमारी रही है?",
+            "mr": "तुमच्या कुटुंबात (आई-वडील किंवा भावंडे) कोणाला मधुमेह, हृदयविकार किंवा मूत्रपिंडाचा (किडनी) आजार आहे का?"
+          },
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "title": {
+        "en": "Ayush Lifestyle & Habits",
+        "hi": "आयुष जीवनशैली और दिनचर्या",
+        "mr": "आयुष जीवनशैली आणि दिनचर्या"
+      },
+      "mandatory": false,
+      "questions": [
+        {
+          "id": "life_appetite_digestion",
+          "field": "agni_digestion_quality",
+          "prompt": {
+            "en": "How is your appetite and digestion? Any bloating, constipation, or indigestion?",
+            "hi": "आपकी भूख और पाचन क्रिया कैसी है? क्या पेट फूलना, कब्ज या अपच की समस्या रहती है?",
+            "mr": "तुमची भूक आणि पचन कसे आहे? पोट फुगणे, बद्धकोष्ठता किंवा अपचनाचा त्रास होतो का?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "life_sleep_stress",
+          "field": "nidra_sleep_quality",
+          "prompt": {
+            "en": "How many hours of restful sleep do you get each night?",
+            "hi": "आप रात में लगभग कितने घंटे सुकून की नींद ले पाते हैं?",
+            "mr": "तुम्ही रात्री किती तास शांत झोप घेता?"
+          },
+          "type": "text"
+        },
+        {
+          "id": "life_water_intake",
+          "field": "daily_water_intake",
+          "prompt": {
+            "en": "Roughly how many glasses of water do you drink in a day?",
+            "hi": "आप दिनभर में लगभग कितने गिलास पानी पीते हैं?",
+            "mr": "तुम्ही दिवसातून साधारणपणे किती ग्लास पाणी पिता?"
+          },
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

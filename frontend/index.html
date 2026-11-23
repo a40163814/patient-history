@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icons/ayush-logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#15803d" />
+    <meta name="description" content="AyushIntake - Pre-OPD Patient History Voice Assistant (Ministry of Ayush)" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <title>AyushIntake | OPD History Assistant</title>
+  </head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen antialiased selection:bg-ayush-100 selection:text-ayush-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW registration skipped', err));
+        });
+      }
+    </script>
+  </body>
+</html>
